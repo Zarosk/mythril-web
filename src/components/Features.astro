@@ -1,0 +1,116 @@
+---
+const features = [
+  {
+    icon: '📱',
+    title: 'Mobile-first capture',
+    description: 'Ideas strike at random. Capture them from your phone via Discord. Your AI brain remembers everything.',
+  },
+  {
+    icon: '🧠',
+    title: 'Persistent brain',
+    description: 'Store notes, context, and decisions. Mythril remembers your preferences and builds on past work.',
+  },
+  {
+    icon: '⚡',
+    title: 'Parallel execution',
+    description: 'Run multiple builds simultaneously. Coordinate complex projects across instances.',
+  },
+  {
+    icon: '🔗',
+    title: 'GitHub integration',
+    description: 'Push directly to your repositories. Create branches, commit changes, open PRs automatically.',
+  },
+  {
+    icon: '🔒',
+    title: 'BYOK security',
+    description: 'Bring your own API key. Your code stays private. We never see your Anthropic usage.',
+  },
+  {
+    icon: '👥',
+    title: 'Team collaboration',
+    description: 'Share brains and projects with your team. Unified context across all members.',
+  },
+];
+---
+
+<section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">Everything you need to build</h2>
+    <p class="section-subtitle">Powerful features that scale from solo hacker to growing team.</p>
+
+    <div class="features-grid">
+      {features.map((feature) => (
+        <div class="feature-card">
+          <span class="feature-icon">{feature.icon}</span>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-description">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .feature-card {
+    background: var(--moria-700);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: left;
+    transition: all 0.3s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--dwarven-blue);
+    box-shadow: 0 8px 30px rgba(74, 111, 165, 0.15);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--mythril-100);
+  }
+
+  .feature-description {
+    font-size: 0.9375rem;
+    color: var(--mythril-400);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
