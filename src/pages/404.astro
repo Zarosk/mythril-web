@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found" description="The page you're looking for doesn't exist.">
+  <main class="not-found">
+    <div class="not-found-content">
+      <svg width="80" height="80" viewBox="0 0 100 100" class="not-found-logo">
+        <defs>
+          <linearGradient id="notFoundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d1d5db" />
+            <stop offset="100%" stop-color="#6b7280" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 50 5 L 90 20 L 90 55 C 90 75, 70 90, 50 95 C 30 90, 10 75, 10 55 L 10 20 Z"
+          fill="#1a1a2e"
+          stroke="url(#notFoundGradient)"
+          stroke-width="3"
+          opacity="0.6"
+        />
+        <path d="M 50 30 L 65 50 L 50 70 L 35 50 Z" fill="#6b7280" />
+      </svg>
+
+      <h1>You delved too greedily and too deep.</h1>
+      <p>The page you're looking for doesn't exist in these mines.</p>
+
+      <a href="/" class="btn btn-primary">Return to Safety</a>
+    </div>
+
+    <div class="balrog-shadow"></div>
+  </main>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .not-found-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .not-found-logo {
+    margin-bottom: 2rem;
+    animation: flicker 2s ease-in-out infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--mythril-200);
+    max-width: 400px;
+  }
+
+  p {
+    color: var(--mythril-500);
+    margin-bottom: 2rem;
+  }
+
+  .balrog-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(ellipse at center bottom, rgba(231, 111, 81, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+</style>
