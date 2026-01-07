@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap');
+
+:root {
+  /* Mythril palette */
+  --mythril-50: #f8f9fa;
+  --mythril-100: #e8eaed;
+  --mythril-200: #d1d5db;
+  --mythril-300: #c0c5cc;
+  --mythril-400: #a8aeb8;
+  --mythril-500: #8b929e;
+  --mythril-600: #6b7280;
+
+  --moria-900: #0a0a0f;
+  --moria-800: #12121a;
+  --moria-700: #1a1a2e;
+  --moria-600: #252538;
+
+  --dwarven-blue: #4a6fa5;
+  --dwarven-blue-light: #6b8cbe;
+  --forge-glow: #f4a261;
+  --gem-purple: #7b2cbf;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--moria-900);
+  color: var(--mythril-100);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--dwarven-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--mythril-100);
+}
+
+::selection {
+  background: var(--dwarven-blue);
+  color: white;
+}
+
+/* Button base styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--dwarven-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dwarven-blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(74, 111, 165, 0.4);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--mythril-600);
+  color: var(--mythril-200);
+}
+
+.btn-secondary:hover {
+  border-color: var(--mythril-400);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mythril-100);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Section styles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--mythril-100);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--mythril-400);
+  margin-bottom: 4rem;
+}
+
+/* Dwarvish Mode (Easter Egg) */
+.dwarvish-mode {
+  --dwarven-blue: #8b4513 !important;
+}
+
+.dwarvish-mode .hero-title {
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.dwarvish-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--forge-glow);
+  color: var(--moria-900);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
