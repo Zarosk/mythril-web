@@ -1,0 +1,137 @@
+---
+// Header with navigation
+---
+
+<header class="header">
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 100 100" class="logo-icon">
+        <defs>
+          <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d1d5db" />
+            <stop offset="50%" stop-color="#a8aeb8" />
+            <stop offset="100%" stop-color="#c0c5cc" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 50 5 L 90 20 L 90 55 C 90 75, 70 90, 50 95 C 30 90, 10 75, 10 55 L 10 20 Z"
+          fill="#1a1a2e"
+          stroke="url(#headerGradient)"
+          stroke-width="3"
+        />
+        <path d="M 50 30 L 65 50 L 50 70 L 35 50 Z" fill="#4a6fa5" />
+      </svg>
+      <span class="logo-text">MYTHRIL</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://docs.mythril.dev" target="_blank">Docs</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" class="btn btn-primary">
+        Add to Discord
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--mythril-100);
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    color: var(--mythril-100);
+  }
+
+  .logo-icon {
+    transition: filter 0.3s;
+  }
+
+  .logo:hover .logo-icon {
+    filter: drop-shadow(0 0 8px rgba(74, 111, 165, 0.6));
+  }
+
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: var(--mythril-400);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--mythril-100);
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--mythril-300);
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links,
+    .nav-actions {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+  }
+</style>
