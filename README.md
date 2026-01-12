@@ -11,16 +11,11 @@ npm install
 npm run dev
 ```
 
-## Build
+## Deploy
 
 ```bash
-npm run build
+vercel --prod
 ```
-
-## Links
-
-- [Main Bot](https://github.com/Zarosk/mythril-bot)
-- [Documentation](https://mythril-docs.vercel.app)
 
 ## License
 
