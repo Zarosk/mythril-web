@@ -20,7 +20,7 @@ vercel --prod
 ## Links
 
 - [Main Bot](https://github.com/Zarosk/mythril-bot)
-- [Discord Community](https://discord.gg/kkbTmW8QF2)
+- [Discord Community](https://discord.gg/5DhmG2uvBp)
 
 ## License
 
